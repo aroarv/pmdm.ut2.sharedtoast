@@ -46,12 +46,10 @@ public class MainActivity extends AppCompatActivity {
       botonGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombre=textBoxNombre.getText().toString();
-                String apellido=textBoxApellido.getText().toString();
                 //Editor
                 SharedPreferences.Editor editor= preferencias.edit();
-                editor.putString("datos",nombre);
-                editor.putString("datos",apellido);
+                editor.putString("nombre",textBoxNombre.getText().toString());
+                editor.putString("apellido",textBoxApellido.getText().toString());
                 //con commit guardamos los datos
                 editor.commit();
                 Toast.makeText(MainActivity.this,"Datos guardados correctamente",Toast.LENGTH_SHORT).show();
